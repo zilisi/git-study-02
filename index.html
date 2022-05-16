@@ -1,2 +1,65 @@
-h1
-h2
+git init                              #生成本地仓库
+
+git status                                   #查看状态
+git status -s                               #简化查看状态
+git add  index.html                     #添加
+git commit -m  “描述#一定要写  例如 解决了..问题，新增了..什么功能 ，修复了..bu#可以往本地提交
+git checkout --index.html            #撤销     //有危险性
+git add .                                       #一次性添加多个文件加入暂存区中 
+git reset HEAD  文件名称     #取消暂存文件
+git reset HEAD .                         #取消暂缓所有文件
+git commit -a -m “描述”           #修改后跳过暂存区提交所有文件到仓库
+git rm --cached  文件名称       #从仓库移除文件//保留工作区的文件
+git rm -f  文件名称                  #从仓库和暂存去移除文件//D被移除
+.gitignore                                     #忽略文件
+*.a #忽略所有带a的文件
+
+node_modules 
+/node_modules #忽略文件夹
+git log  #按照时间先后顺序列出提交历史 ，最近的排在最上面
+git log -2 #展示最新两条
+git log -2 --pretty=oneline #在一行展示提交信息
+git log -2--pretty=format:'%h | %an | %ar | %s'
+
+git reset --hard  加上要推到的id     #回退到指定版本中
+git reflog  #回顾git的几个命令
+
+git remote -v #查看本地工程关联的远程仓库是谁
+git push -u origin main #表示第一次本地向远程仓库提交的时候，必须这么写
+git push #第二次推送的时候
+#添加新的工程关联的时候 要在创建后保存到仓库
+ssh-keygen -t ed25519 -C "1730627237@qq.com"  #生成/添加ssh公钥
+ssh -T git@github.com       # 检查 ssh key 是否配置成功
+cd existing_git_repo #先进入到已经存在的仓库
+d.. #返回上一级
+git clone 仓库地址 #把远程仓库克隆到本地
+
+/////
+功能分支 
+主分支 master
+登录  login
+注册    reg
+支付    payment
+git branch                           #查看当前分支列表 
+git branch  分支名称             #创建新分支  *号代表主分支
+git checkout 分支名称           #切换到指定的分支上
+git checkout -b 分支名称       #立即切换到新创建的分支上
+git checkout   master//主分支              #合并分支//先切换主分支
+git merge login//要合并的次分支   
+git branch -d    分支名称        #删除指定分支 //不可以在要删除的分支上面删除本分支   
+
+冲突原因：两个人同时修改了同一个文件
+    #解决冲突    
+
+
+git push -u origin 分支名称      #把本地分支推送到云端
+git remote show origin           #展示远程分支的列表 
+git checkout 远程分支名称            #远程仓库的切换分支
+git checkout -b 自己的名称 origin/远程分支的名称    
+git pull                                      #拉取远程分支·里·的最新代码
+git branch -d  分支名称     #删除远程仓库的分支
+git branch -D  分支名称     #强制删除远程仓库的分支
+
+
+
+
